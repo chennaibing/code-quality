@@ -24,7 +24,8 @@
 
 ## 使用java-google-style
 ### 导入code style
-file->setting->
+file->setting->Editor->Code Style
+![设置步骤](images/import-code-style.png)
 ## 文档注释说明
  文档注释分为三部分。先举例如下。　　
 ```   
@@ -58,6 +59,22 @@ version 需要在每次迭代版本开发时设置
 */
 ```
 ## live template
+```
+**
+ * .
+$param$
+ * @return 
+ * @author $user$ 
+ * @date $date$
+ * @version 19s3.1015_实验室自查工具				
+ */
+```
+
+```groovy
+groovyScript("  def result = '';  def param = \"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList();  for(int i = 0;i < param.size();i++)  {         result += ' * @param ' + param[i] + ((i < param.size() - 1) ? '\\n' : '');  }; return result; ",methodParameters())
+```
+![设置步骤一](images/live-template-1.png)
+![设置步骤二](images/live-template-2.png)
 
 
 
